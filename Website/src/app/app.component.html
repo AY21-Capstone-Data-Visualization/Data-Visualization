@@ -1,4 +1,119 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Carlos Gallardo Guitars</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+
+	<div class="grid-container">
+		<div class="header_of_page">
+			<div class="header">
+				<h1 class="header">Practice * Play * Perform</h1>
+				<h3 class="header">BY CARLOS GALLARDO</h3>
+			</div>
+		</div>
+
+		<div class="nav_of_page">
+			<div id="navigation_bar">
+				<a class="navLink active_navLink" href="index.html" style="color: white">HOME</a>
+				<a class="navLink" href="products.html" style="color: white">PRODUCTS</a>
+				<a class="navLink" href="signup.html" style="color: white">SUBSCRIBE</a>
+				<a class="navLink" href="mailto:m212082@usna.edu?subject=Feedback" style="color: white">CONTACT US </a>
+				<script>
+					var header = document.getElementById("navigation_bar");
+              var btns = header.getElementsByClassName("");
+              for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active_navLink");
+                current[0].className = current[0].className.replace(" active_navLink", "");
+                this.className += " active_navLink";});
+              }
+				</script>
+			</div>
+		</div>
+
+		<div class="main_of_page">
+			<div class="intro">
+				<img src="https://image.flaticon.com/icons/svg/124/124010.svg" class="left" alt="">
+				<iframe src="https://www.youtube.com/embed/rO2_65yuLsw"></iframe>
+				<table id="greeting_id"></table>
+				<script>
+					var today = new Date()
+              var current_minute = today.getMinutes()
+              if (current_minute%2 == 0) {
+                  document.getElementById("greeting_id").innerHTML = 'Bring Music to Life! ';
+              }  else {
+                  document.getElementById("greeting_id").innerHTML = 'Face the Music!';
+              } 
+				</script>
+
+				<p class="intro"> If you keep running into the following problems:</p>
+				<ul class="intro">
+					<li>playing the same songs over and over again</li>
+					<li>struggling to find the motivation to practice scales</li>
+					<li>not finding enough time on your schedule to practice for the industry standard of "1 hour"</li>
+					<li>or just don't know where to start to learn music theory</li>
+				</ul>
+				<p class="intro"> Then you've come to the right place!</p>
+				<h4 class="intro">My name is Carlos Gallardo and I will be your instructor.
+					I want to give you the tools to improve your guitar playing. Years ago, I found myself in the same
+					slump as most guitarists. I felt like my guitar playing was going nowhere. However, I found a method
+					that made guitar easier to learn and most importantly, fun again. Now I want to share my experience
+					with you through my various lesson plans that are geared for all variety of playing levels and style
+					of play. Check out our <a href="products.html">Lesson Plans!</a> Also, I have provided tabs for a
+					few classic guitar songs via <a href="https://youtu.be/dQw4w9WgXcQ">Google.</a> Check it out!</h4>
+			</div>
+
+			<!-- I got help for slideshow from w3 schools -->
+			<div class="slideshow">
+				<div class="photos">
+					<img src="https://www.playguitarburnley.co.uk/wp-content/uploads/2017/07/electric-guitar-2148807_1920.jpg" alt="close-up" style="width:100%"></div>
+
+					<div class="photos">
+						<img src="https://guitar.com/wp-content/uploads/2018/06/29_08-13.jpg" alt=" strat" style="width:100%"></div>
+
+						<div class="photos">
+							<img src="https://www.roland.co.uk/blog/wp-content/uploads/2013/07/gr-d_stage_gal.jpg" alt="pedals" style="width:100%"></div>
+						</div>
+						<br>
+
+						<div style="text-align:center">
+							<span class="dot"></span>
+							<span class="dot"></span>
+							<span class="dot"></span>
+						</div>
+
+						<script>
+							var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("photos");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        //helps to add movement to the dots (i.e. show current photo)
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" activeDot", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " activeDot";
+        // Change image every 2 seconds
+        setTimeout(showSlides, 1000);
+      }
+						</script>
+					</div>
+				</div>
+</body>
+
+</html>
